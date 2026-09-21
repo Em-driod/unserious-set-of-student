@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Background Color Changer</title>
+
+  <!-- Tailwind via CDN: utility classes with no build step -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body id="page" class="min-h-screen flex items-center justify-center p-8 font-sans text-slate-100 transition-colors duration-300">
+
+  <!-- Card container -->
+  <div class="w-full max-w-sm rounded-3xl bg-white/5 backdrop-blur-md border border-white/10 shadow-2xl p-10 text-center">
+
+    <h1 class="text-sm font-semibold uppercase tracking-[0.3em] text-indigo-300 mb-2">Colors</h1>
+    <p class="text-xs text-slate-400 mb-8">Tap a button to change the background</p>
+
+    <!-- Buttons -->
+    <div class="grid grid-cols-2 gap-3">
+      <button onclick="setColor('red')"
+        class="h-14 rounded-2xl text-sm font-semibold uppercase tracking-wider text-white bg-red-500/90 hover:bg-red-500 hover:scale-105 active:scale-95 shadow-lg shadow-red-500/30 transition">
+        Red
+      </button>
+
+      <button onclick="setColor('blue')"
+        class="h-14 rounded-2xl text-sm font-semibold uppercase tracking-wider text-white bg-blue-500/90 hover:bg-blue-500 hover:scale-105 active:scale-95 shadow-lg shadow-blue-500/30 transition">
+        Blue
+      </button>
+
+      <button onclick="setColor('green')"
+        class="h-14 rounded-2xl text-sm font-semibold uppercase tracking-wider text-white bg-green-500/90 hover:bg-green-500 hover:scale-105 active:scale-95 shadow-lg shadow-green-500/30 transition">
+        Green
+      </button>
+
+      <button onclick="setColor('yellow')"
+        class="h-14 rounded-2xl text-sm font-semibold uppercase tracking-wider text-white bg-yellow-500/90 hover:bg-yellow-500 hover:scale-105 active:scale-95 shadow-lg shadow-yellow-500/30 transition">
+        Yellow
+      </button>
+    </div>
+
+  </div>
+
+  <script src="colors.js" defer></script>
+</body>
+</html>

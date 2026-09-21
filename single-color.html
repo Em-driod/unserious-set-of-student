@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Background Color Changer</title>
+
+  <!-- Tailwind via CDN: utility classes with no build step -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body id="page" class="min-h-screen flex items-center justify-center p-8 font-sans text-slate-100 transition-colors duration-300">
+
+  <!-- Card container -->
+  <div class="w-full max-w-sm rounded-3xl bg-white/5 backdrop-blur-md border border-white/10 shadow-2xl p-10 text-center">
+
+    <h1 class="text-sm font-semibold uppercase tracking-[0.3em] text-indigo-300 mb-2">Color</h1>
+    <p class="text-xs text-slate-400 mb-8">Tap the button to change the background</p>
+
+    <button onclick="setColor('purple')"
+      class="h-14 w-full rounded-2xl text-sm font-semibold uppercase tracking-wider text-white bg-purple-500/90 hover:bg-purple-500 hover:scale-105 active:scale-95 shadow-lg shadow-purple-500/30 transition">
+      Purple
+    </button>
+
+  </div>
+
+  <script src="colors.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cart Card</title>
+
+  <!-- Tailwind via CDN: utility classes with no build step -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen font-sans bg-stone-50 text-stone-900">
+
+  <!-- Nav -->
+  <nav class="flex items-center justify-between px-6 py-4 border-b border-stone-200">
+    <span class="text-base tracking-tight">Field &amp; Co.</span>
+    <button id="cart-btn" class="flex items-center gap-2 text-sm">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+        <path d="M6 8h12l-1 12H7L6 8Z" stroke-linejoin="round" />
+        <path d="M9 8V6a3 3 0 0 1 6 0v2" stroke-linecap="round" />
+      </svg>
+      <span>Cart</span>
+      <span id="cart-count" class="text-stone-900/50">(0)</span>
+    </button>
+  </nav>
+
+  <!-- Card -->
+  <div class="flex items-center justify-center p-8">
+    <div class="w-full max-w-sm rounded-lg bg-white border border-stone-200 shadow-sm overflow-hidden">
+
+      <!-- Product image -->
+      <div class="bg-stone-100 flex items-center justify-center py-10">
+        <svg width="120" height="120" viewBox="0 0 120 120" fill="none">
+          <path d="M30 62C30 40.46 46.46 24 60 24s30 16.46 30 38" stroke="black" stroke-width="2.5" stroke-linecap="round"/>
+          <rect x="22" y="58" width="16" height="28" rx="6" fill="black"/>
+          <rect x="82" y="58" width="16" height="28" rx="6" fill="black"/>
+          <path d="M38 86c0 6 5 10 12 10" stroke="black" stroke-width="2.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+
+      <div class="p-6">
+        <div class="flex items-start justify-between mb-1">
+          <h1 class="text-base">Field Headphones</h1>
+          <span id="status" class="text-xs border border-amber-400 text-amber-800 px-2 py-0.5 rounded">Pending</span>
+        </div>
+        <p class="text-sm text-stone-900/60 mb-6">$49.99</p>
+
+        <div class="flex gap-2">
+          <button id="add-btn"
+            class="flex-1 h-11 rounded bg-stone-900 text-white text-sm hover:bg-stone-700 transition">
+            Add to cart
+          </button>
+
+          <button id="status-btn"
+            class="h-11 px-4 rounded border border-stone-300 text-sm hover:bg-stone-50 transition">
+            Toggle status
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="cart-card.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Style Changer</title>
+
+  <!-- Tailwind via CDN: utility classes with no build step -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen flex items-center justify-center p-8 font-sans bg-slate-900 text-slate-100">
+
+  <!-- Card container -->
+  <div class="w-full max-w-sm rounded-3xl bg-white/5 backdrop-blur-md border border-white/10 shadow-2xl p-10 text-center">
+
+    <h1 class="text-sm font-semibold uppercase tracking-[0.3em] text-indigo-300 mb-6">Style Changer</h1>
+
+    <!-- Text color section -->
+    <p id="target" class="font-bold mb-4" style="font-size: 16px;">Change my style!</p>
+    <div class="grid grid-cols-4 gap-2 mb-6">
+      <button onclick="setTextColor('red')"
+        class="h-10 rounded-xl text-xs font-semibold uppercase text-white bg-red-500/90 hover:bg-red-500 hover:scale-105 active:scale-95 transition">Red</button>
+      <button onclick="setTextColor('blue')"
+        class="h-10 rounded-xl text-xs font-semibold uppercase text-white bg-blue-500/90 hover:bg-blue-500 hover:scale-105 active:scale-95 transition">Blue</button>
+      <button onclick="setTextColor('green')"
+        class="h-10 rounded-xl text-xs font-semibold uppercase text-white bg-green-500/90 hover:bg-green-500 hover:scale-105 active:scale-95 transition">Green</button>
+      <button onclick="setTextColor('yellow')"
+        class="h-10 rounded-xl text-xs font-semibold uppercase text-white bg-yellow-500/90 hover:bg-yellow-500 hover:scale-105 active:scale-95 transition">Yellow</button>
+    </div>
+
+    <!-- Font size section -->
+    <div class="flex justify-center gap-3 mb-6">
+      <button onclick="shrink()"
+        class="h-12 w-12 rounded-2xl text-xl font-bold text-white bg-rose-500/90 hover:bg-rose-500 hover:scale-105 active:scale-95 transition">A-</button>
+      <button onclick="resetSize()"
+        class="h-12 px-4 rounded-2xl text-xs font-semibold uppercase tracking-wider text-slate-200 bg-white/10 hover:bg-white/20 hover:scale-105 active:scale-95 transition">Reset Size</button>
+      <button onclick="grow()"
+        class="h-12 w-12 rounded-2xl text-xl font-bold text-white bg-emerald-500/90 hover:bg-emerald-500 hover:scale-105 active:scale-95 transition">A+</button>
+    </div>
+
+    <!-- Border/shape section -->
+    <div id="box" class="h-28 w-28 mx-auto mb-6 bg-indigo-400/30" style="border: 4px solid #818cf8; border-radius: 0px;"></div>
+    <div class="grid grid-cols-2 gap-2">
+      <button onclick="setBorderColor('#f87171')"
+        class="h-10 rounded-xl text-xs font-semibold uppercase text-white bg-red-500/90 hover:bg-red-500 hover:scale-105 active:scale-95 transition">Red Border</button>
+      <button onclick="setBorderColor('#4ade80')"
+        class="h-10 rounded-xl text-xs font-semibold uppercase text-white bg-green-500/90 hover:bg-green-500 hover:scale-105 active:scale-95 transition">Green Border</button>
+      <button onclick="thicken()"
+        class="h-10 rounded-xl text-xs font-semibold uppercase text-slate-200 bg-white/10 hover:bg-white/20 hover:scale-105 active:scale-95 transition">Thicker</button>
+      <button onclick="thin()"
+        class="h-10 rounded-xl text-xs font-semibold uppercase text-slate-200 bg-white/10 hover:bg-white/20 hover:scale-105 active:scale-95 transition">Thinner</button>
+      <button onclick="round()"
+        class="h-10 rounded-xl text-xs font-semibold uppercase text-slate-200 bg-white/10 hover:bg-white/20 hover:scale-105 active:scale-95 transition">More Round</button>
+      <button onclick="square()"
+        class="h-10 rounded-xl text-xs font-semibold uppercase text-slate-200 bg-white/10 hover:bg-white/20 hover:scale-105 active:scale-95 transition">More Square</button>
+    </div>
+
+  </div>
+
+  <script src="style-changer.js" defer></script>
+</body>
+</html>
