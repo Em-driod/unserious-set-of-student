@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <title>Callback Function</title>
+</head>
+
+<body class="bg-white text-white min-h-screen flex items-center justify-center">
+
+  <div class="bg-red-500 p-8 rounded-2xl text-center w-[350px]">
+
+    <h1 class="text-2xl font-bold mb-3">
+      Callback Function
+    </h1>
+
+    <p id="message" class="text-slate-400 mb-6">
+      Click the button
+    </p>
+
+    <button
+      id="btn"
+      class="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg font-semibold"
+    >
+      Run Callback
+    </button>
+
+  </div>
+
+  <script>
+
+    function normal() {
+        document.getElementById('message').innerText = 'Normal Function Executed';
+    }
+ 
+    function itEmbeds(normalFunc){
+       document.getElementById('message').innerText = 'Please wait...';
+
+       setTimeout(normalFunc, 2000);
+    }
+
+    document.getElementById('btn').addEventListener('click',function (){
+        itEmbeds(normal);
+    })
+    
+  </script>
+
+</body>
+</html>

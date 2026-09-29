@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Money Counter</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+
+  <div class="bg-white p-6 rounded-xl shadow-lg w-[350px]">
+
+    <h1 class="text-2xl font-bold text-center mb-6">
+      Money Counter
+    </h1>
+
+    <!-- Balance -->
+    <div class="bg-black text-white p-5 rounded-lg text-center mb-5">
+      <p class="text-gray-400 text-sm">Your Balance</p>
+
+      <h2 id="balance" class="text-3xl font-bold">
+        ₦500,000
+      </h2>
+    </div>
+
+
+    <!-- Amount -->
+    <input
+      id="amount"
+      type="number"
+      placeholder="Enter amount"
+      class="w-full border p-3 rounded-lg mb-4 outline-none"
+    >
+
+    <!-- Transaction Type -->
+    <select
+      id="type"
+      class="w-full border p-3 rounded-lg mb-4"
+    >
+      <option value="income">Income</option>
+      <option value="expense">Expense</option>
+    </select>
+
+    <!-- Button -->
+    <button
+      onclick="addTransaction()"
+      class="w-full bg-black text-white p-3 rounded-lg hover:bg-gray-800"
+    >
+      Add Transaction
+    </button>
+
+  </div>
+
+
+  <script>
+
+    // Starting balance
+    let balance = 500000;
+
+
+    function addTransaction() {
+
+      // Get the amount from the input
+      const amount = Number(
+        document.getElementById("amount").value
+      );
+
+      // Get whether it is income or expense
+      const type = document.getElementById("type").value;
+
+
+      // Check if amount is valid
+      if (amount <= 0) {
+        alert("Enter a valid amount");
+        return;
+      }
+
+
+      // Income adds money
+      if (type === "income") {
+        balance = balance + amount;
+      }
+
+
+      // Expense removes money
+      if (type === "expense") {
+        balance = balance - amount;
+      }
+
+
+      // Show new balance
+      document.getElementById("balance").textContent =
+        "₦" + balance.toLocaleString();
+
+
+      // Clear input
+      document.getElementById("amount").value = "";
+    }
+
+  </script>
+
+</body>
+</html>
+

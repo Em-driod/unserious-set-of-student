@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <title>Greeting Callback</title>
+</head>
+
+<body class="bg-white text-white min-h-screen flex items-center justify-center">
+
+  <div class="bg-black p-8 rounded-2xl text-center w-[350px]">
+
+    <h1 class="text-2xl font-bold mb-3">
+      Greeting Callback
+    </h1>
+
+    <input id="nameInput" type="text" placeholder="Enter your name"
+      class="w-full bg-slate-800 rounded-lg px-3 py-2 mb-4 text-center" />
+
+    <button
+      id="btn"
+      class="bg-green-600 hover:bg-blue-700 px-6 py-3 rounded-lg font-semibold mb-6"
+    >
+      Say Hello
+    </button>
+
+    <p id="message" class="text-slate-400">
+      Type your name and click the button
+    </p>
+
+  </div>
+
+  <script src="greeting.js"></script>
+
+</body>
+</html>

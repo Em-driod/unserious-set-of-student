@@ -33,7 +33,7 @@ function createTaskItem(text) {
     "task-enter flex items-center gap-3 rounded-2xl bg-white border-2 border-black px-4 py-3 transition";
 
   // Complete button: a circular ring that fills green when done
-  const completeBtn = document.createElement("button");
+  const completeBtn = document.createElement("button"); 
   completeBtn.title = "Mark completed";
   completeBtn.className =
     "shrink-0 h-6 w-6 rounded-full border-2 border-black text-transparent text-xs font-bold leading-none " +
@@ -51,7 +51,7 @@ function createTaskItem(text) {
     completeBtn.classList.toggle("bg-green-500", done);
     completeBtn.classList.toggle("border-green-500", done);
     completeBtn.classList.toggle("text-white", done);
-  });
+  }); 
 
   // Cancel button: removes the task from the list
   const cancelBtn = document.createElement("button");
